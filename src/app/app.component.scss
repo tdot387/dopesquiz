@@ -1,0 +1,17 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+
+    li {
+        padding: 12px;
+        cursor: pointer;
+
+        &:hover {
+            color: blue;
+        }
+    }
+}
+
+mat-drawer-container {
+    height: calc(100% - 64px);
+}
