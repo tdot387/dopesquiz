@@ -12,6 +12,12 @@ export class DialogAddUserComponent {
 
   addData(f: any) {
     const collectionInstance = collection(this.firestore, 'players');
-    addDoc(collectionInstance, f.value);
+
+    const player = {
+      player: f.value.player,
+      points: 0,
+    }
+
+    addDoc(collectionInstance, player);
   }
 }
