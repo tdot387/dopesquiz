@@ -12,12 +12,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { DialogAddUserComponent } from './dialog-add-user/dialog-add-user.component';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDialogModule } from '@angular/material/dialog'; 
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { GameComponent } from './game/game.component';
 import { PlayersComponent } from './players/players.component';
-import { StatsComponent } from './stats/stats.component'; 
+import { StatsComponent } from './stats/stats.component';
+import { DialogNewGameComponent } from './dialog-new-game/dialog-new-game.component';
+import { MatStepperModule, matStepperAnimations } from '@angular/material/stepper';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { StatsComponent } from './stats/stats.component';
     DialogAddUserComponent,
     GameComponent,
     PlayersComponent,
-    StatsComponent
+    StatsComponent,
+    DialogNewGameComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { StatsComponent } from './stats/stats.component';
     MatIconModule,
     MatDialogModule,
     MatButtonModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
