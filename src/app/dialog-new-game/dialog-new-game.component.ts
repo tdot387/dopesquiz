@@ -11,6 +11,10 @@ import { Observable } from 'rxjs';
 export class DialogNewGameComponent {
 
   userData!: Observable<any>;
+  numberOfFields: number = 0;
+  inputFields: number[] = [];
+
+
   constructor(private firestore: Firestore) {
     this.getData();
   }
@@ -19,8 +23,19 @@ export class DialogNewGameComponent {
 
     const collectionInstance = collection(this.firestore, 'gameInfo');
     addDoc(collectionInstance, g.value);
-    
 
+
+  }
+
+  submitForm() {
+    // Prüfe, ob numberOfFields im Bereich von 1 bis 10 liegt
+    if (this.numberOfFields >= 1 && this.numberOfFields <= 10) {
+      // Aktualisiere das Array inputFields mit der gewünschten Anzahl von Elementen
+      this.inputFields = new Array(this.numberOfFields);
+    } else {
+      // Zeige eine Fehlermeldung oder tue etwas anderes, wenn die Eingabe ungültig ist
+      console.log('Ungültige Eingabe');
+    }
   }
 
   getData() {
@@ -30,7 +45,9 @@ export class DialogNewGameComponent {
       console.log(val);
 
     })
-  }
+  } 
+
+  
 
   updateData(id: string) {
     this.getData();

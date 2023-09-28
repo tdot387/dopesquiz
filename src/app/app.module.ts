@@ -20,6 +20,7 @@ import { PlayersComponent } from './players/players.component';
 import { StatsComponent } from './stats/stats.component';
 import { DialogNewGameComponent } from './dialog-new-game/dialog-new-game.component';
 import { MatStepperModule, matStepperAnimations } from '@angular/material/stepper';
+import { DialogGameDetailsComponent } from './dialog-game-details/dialog-game-details.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { MatStepperModule, matStepperAnimations } from '@angular/material/steppe
     GameComponent,
     PlayersComponent,
     StatsComponent,
-    DialogNewGameComponent
+    DialogNewGameComponent,
+    DialogGameDetailsComponent
   ],
   imports: [
     BrowserModule,

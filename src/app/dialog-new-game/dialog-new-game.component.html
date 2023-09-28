@@ -1,8 +1,24 @@
 <div class="creat-game">
     <form #g="ngForm" (ngSubmit)="createGame(g)">
         <input type="text" placeholder="Name of the game" name="gameName" ngModel>
-        <button mat-button type="submit" [mat-dialog-close]="true">Create game</button>
+
+        <form (ngSubmit)="submitForm()">
+            <label for="numberOfFields">Anzahl der Felder:</label>
+            <input type="number" id="numberOfFields" name="numberOfFields" [(ngModel)]="numberOfFields">
+            <button type="submit">Submit</button>
+        </form>
+        <form #c="ngForm">
+            <div *ngFor="let _ of inputFields; let i = index">
+                <label for="field{{ i }}">Feld {{ i + 1 }}:</label>
+                <input type="text" id="field{{ i }}" name="field{{ i }}" [(ngModel)]="inputFields[i]">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    <button mat-button type="submit" [mat-dialog-close]="true">Create game</button>
     </form>
+
+
+
 </div>
 
 

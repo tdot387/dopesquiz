@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogNewGameComponent } from '../dialog-new-game/dialog-new-game.component';
 import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { DialogGameDetailsComponent } from '../dialog-game-details/dialog-game-details.component';
 
 @Component({
   selector: 'app-game',
@@ -28,5 +29,9 @@ export class GameComponent {
       this.gameData = collectionData(collectionInstance, { idField: 'id' });
       console.log(val);
     });
+  }
+
+  openDialogDetails() {
+    this.dialog.open(DialogGameDetailsComponent);
   }
 }

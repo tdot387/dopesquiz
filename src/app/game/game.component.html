@@ -1,5 +1,5 @@
 <ul>
-    <li *ngFor="let data of gameData | async" [routerLink]="data.id">
+    <li *ngFor="let data of gameData | async" (click)="openDialogDetails()">
         {{ data.gameName }}
     </li>
 </ul>
