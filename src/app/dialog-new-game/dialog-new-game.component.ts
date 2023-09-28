@@ -19,16 +19,17 @@ export class DialogNewGameComponent {
 
     const collectionInstance = collection(this.firestore, 'gameInfo');
     addDoc(collectionInstance, g.value);
+    
 
   }
 
   getData() {
     const collectionInstance = collection(this.firestore, 'gameInfo');
     collectionData(collectionInstance, { idField: 'id' }).subscribe(val => {
+      this.userData = collectionData(collectionInstance, { idField: 'id' });
       console.log(val);
 
     })
-    this.userData = collectionData(collectionInstance, { idField: 'id' });
   }
 
   updateData(id: string) {

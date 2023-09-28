@@ -1,4 +1,12 @@
-<mat-stepper orientation="vertical">
+<div class="creat-game">
+    <form #g="ngForm" (ngSubmit)="createGame(g)">
+        <input type="text" placeholder="Name of the game" name="gameName" ngModel>
+        <button mat-button type="submit" [mat-dialog-close]="true">Create game</button>
+    </form>
+</div>
+
+
+<!-- <mat-stepper orientation="vertical">
     <mat-step>
         <ng-template matStepLabel>Step 1</ng-template>
         <ng-template matStepContent>
@@ -11,7 +19,7 @@
     <mat-step>
         <ng-template matStepLabel>Step 2</ng-template>
         <ng-template matStepContent *ngFor="let data of userData | async">
-            <p>This content was also rendered lazily</p>
+            <p>Create game with the name {{data.gameName}}</p>
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button matStepperNext (click)="updateData(data.id)">Next</button>
         </ng-template>
@@ -21,4 +29,4 @@
         <p>This content was rendered eagerly</p>
         <button mat-button matStepperPrevious>Back</button>
     </mat-step>
-</mat-stepper>
+</mat-stepper> -->
